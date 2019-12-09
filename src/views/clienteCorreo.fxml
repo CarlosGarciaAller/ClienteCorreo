@@ -25,14 +25,14 @@
       </MenuBar>
       <AnchorPane prefHeight="675.0" prefWidth="1153.0">
          <children>
-            <ButtonBar layoutX="1.0" layoutY="8.0" prefHeight="40.0" prefWidth="579.0">
+            <ButtonBar layoutX="1.0" layoutY="8.0" prefHeight="40.0" prefWidth="579.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <buttons>
                   <Button mnemonicParsing="false" text="Responder" />
                   <Button mnemonicParsing="false" text="Reenviar" />
                   <Button mnemonicParsing="false" text="Eliminar" />
                </buttons>
             </ButtonBar>
-            <TableView fx:id="tablaEmail" layoutX="7.0" layoutY="48.0" prefHeight="316.0" prefWidth="579.0">
+            <TableView fx:id="tablaEmail" layoutX="7.0" layoutY="48.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <columns>
                   <TableColumn fx:id="columnEmail" prefWidth="75.0" text="Email" />
                   <TableColumn fx:id="columnForm" prefWidth="75.0" text="Asunto" />
