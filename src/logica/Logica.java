@@ -3,6 +3,11 @@ package logica;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.Email;
+import model.EmailAccount;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Logica {
     private static Logica INSTANCE = null;

@@ -16,7 +16,9 @@
          <menus>
             <Menu mnemonicParsing="false" style="-fx-padding: 4;" text="File">
                <items>
-                  <MenuItem fx:id="login" onAction="#openLogin" mnemonicParsing="false" text="Login" />
+                  <MenuItem fx:id="login" mnemonicParsing="false" onAction="#openLogin" text="Abrir correo" />
+                  <MenuItem fx:id="alta" mnemonicParsing="false" onAction="#loadNewCorreo" text="Añadir nuevo correo" />
+                  <MenuItem fx:id="borrar" mnemonicParsing="false" onAction="#openLogin" text="Eliminar Correo" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" style="-fx-padding: 4;" text="Edit" />

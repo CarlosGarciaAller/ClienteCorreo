@@ -1,6 +1,9 @@
 package model;
 
-public class EmailAccount {
+import java.io.IOException;
+import java.io.Serializable;
+
+public class EmailAccount implements Serializable {
     String email;
     String pass;
 

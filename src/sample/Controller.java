@@ -6,16 +6,22 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import logica.Logica;
 import model.Email;
+import model.EmailAccount;
 
 import javax.mail.*;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 import java.util.ResourceBundle;
 
@@ -34,7 +40,7 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        try{
+        /*try{
             Properties properties = new Properties();
 
             String host = "pop.gmail.com";// change accordingly
@@ -58,7 +64,7 @@ public class Controller implements Initializable {
             // retrieve the messages from the folder in an array and print it
             Message[] messages = emailFolder.getMessages();
 
-            for (int i = 0, n = messages.length; i < n; i++) {
+            for (int i = 0, n = 3; i < n; i++) {
                 Message message = messages[i];
                 Multipart mp = (Multipart) message.getContent();
                 BodyPart bp = mp.getBodyPart(0);
@@ -77,11 +83,37 @@ public class Controller implements Initializable {
         columnForm.setCellValueFactory(new PropertyValueFactory<Message, String>("Asunto"));
         columnText.setCellValueFactory(new PropertyValueFactory<Message, String>("Contenido"));
 
-        tablaEmail.setItems(Logica.getInstance().getListaCorreos());
+        tablaEmail.setItems(Logica.getInstance().getListaCorreos());*/
     }
 
     public void openLogin(ActionEvent actionEvent) {
         LoadStages("../views/loginEmail.fxml");
+    }
+
+    public void loadNewCorreo(ActionEvent actionEvent) {
+        LoadStages("../views/altaEmail.fxml");
+    }
+
+    @FXML
+    private TextField newEmail;
+
+    @FXML
+    private PasswordField newPass;
+
+    public void altaCorreo(ActionEvent actionEvent) throws IOException {
+        List<EmailAccount> lista = new ArrayList<EmailAccount>();
+        String email = newEmail.getText();
+        String pass = newPass.getText();
+        lista.add(new EmailAccount(email,pass));
+        File file = new File("listaEmail.txt");
+        FileWriter fw = new FileWriter(file);
+        if(!file.exists()){
+            fw =  new FileWriter("listaEmail.txt",true);
+        }
+        BufferedWriter bfw = new BufferedWriter(fw);
+        bfw.write(email+","+pass+"\n");
+        bfw.close();
+        fw.close();
     }
 
     private void LoadStages(String fxml){
