@@ -1,4 +1,4 @@
-package model;
+package com.carlos.model;
 
 public class Email {
     private String email;

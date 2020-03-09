@@ -1,6 +1,5 @@
-package model;
+package com.carlos.model;
 
-import java.io.IOException;
 import java.io.Serializable;
 
 public class EmailAccount implements Serializable {

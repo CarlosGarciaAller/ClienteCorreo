@@ -1,13 +1,8 @@
-package logica;
+package com.carlos.logica;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import model.Email;
-import model.EmailAccount;
-
-import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+import com.carlos.model.Email;
 
 public class Logica {
     private static Logica INSTANCE = null;
